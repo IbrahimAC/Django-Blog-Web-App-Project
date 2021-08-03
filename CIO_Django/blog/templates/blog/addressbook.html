@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/addressbook.css' %}">
+<h1> All informatiom below:</h1>
+    {% for address in addresses %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <strong> <table class="mr-2" href="#">{{ address.name }}</table></strong>
+            <br>
+              <tr class="text-muted">{{ address.door_number }}</tr>
+            <table class="article-title" href="#">{{ address.street_name }}</table>
+            <table class="article-content">{{ address.postcode }}</table>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
+
+
+<!-- <strong - defines important text -->
+   <!-- <table>	Defines a table -->
+    <!-- <td>	Defines a cell in a table -->
+   <!-- <template>	Defines a container for content that should be hidden when the page loads -->
+<!-- <th>	Defines a header cell in a table
+ <title>	Defines a title for the document
+<tr>	Defines a row in a tabl
+                <wbr>	defines a possible line-break -->
